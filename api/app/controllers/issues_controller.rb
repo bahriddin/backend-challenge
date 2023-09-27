@@ -1,6 +1,9 @@
 class IssuesController < ApplicationController
   def create
-    Issue.create!(title: params[:title], description: params[:description])
+    @issue = Issue.create!(title: params[:title], description: params[:description])
+    render json: @issue
+  rescue StandardError => error
+    render json: { error: error }.to_json, status: 404
   end
 
   def show
@@ -28,7 +31,8 @@ class IssuesController < ApplicationController
     @issue = Issue.find(params[:id])
 
     if @issue.present?
-      render json: { id: @issue }
+      @issue.delete
+      render json: { id: @issue.id }
     else
       render json: { error: 'Issue not found' }.to_json, status: 404
     end

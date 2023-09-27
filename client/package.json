@@ -1,0 +1,11 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Bahriddin Abdiev",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.5.1",
+    "yargs": "^17.7.2"
+  }
+}
