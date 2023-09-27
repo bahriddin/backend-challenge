@@ -3,7 +3,7 @@ const { createIssue, getIssue, updateIssue, deleteIssue } = require("./api");
 const { printResponse, printError } = require("./helper");
 
 yargs
-  .scriptName("API")
+  .scriptName("node index.js")
   .usage("$0 <cmd> [args]")
   .command(
     "create [title] [description]",
